@@ -34,7 +34,7 @@ const uint8_t p_1_id[NUMBER_OF_PROTOCOL_1_SERVO] = {1, 2}; // {servo_ID_1, servo
 const uint8_t p_2_id[NUMBER_OF_PROTOCOL_2_SERVO] = {3, 4, 5}; // {servo_ID_5, servo_ID_6, ...};
 ```
 
-**a. Set this to *true or *false, when using/not using Protocol 1.0 and/or Protocol 2.0:**
+__a. Set this to *true or *false, when using/not using Protocol 1.0 and/or Protocol 2.0:__
 
 ```cpp title="editt.cpp"
 #define USING_PROTOCOL_1 *true
@@ -42,7 +42,7 @@ const uint8_t p_2_id[NUMBER_OF_PROTOCOL_2_SERVO] = {3, 4, 5}; // {servo_ID_5, se
 #define USING_PROTOCOL_2 *true
 ```
 
-**b. Set *number of servo:**
+__b. Set *number of servo:__
 
 ```cpp title="editt.cpp"
 #define NUMBER_OF_PROTOCOL_1_SERVO *2
@@ -50,7 +50,7 @@ const uint8_t p_2_id[NUMBER_OF_PROTOCOL_2_SERVO] = {3, 4, 5}; // {servo_ID_5, se
 #define NUMBER_OF_PROTOCOL_2_SERVO *2
 ```
 
-**c. Set ID *{servo_ID_1, servo_ID_2, servo_ID_3, ...}:**
+__c. Set ID *{servo_ID_1, servo_ID_2, servo_ID_3, ...}:__
 
 ```cpp title="editt.cpp"
 const uint8_t p_1_id[NUMBER_OF_PROTOCOL_1_SERVO] = *{1, 2}; // {servo_ID_1, servo_ID_2, ...};
@@ -58,21 +58,14 @@ const uint8_t p_1_id[NUMBER_OF_PROTOCOL_1_SERVO] = *{1, 2}; // {servo_ID_1, serv
 const uint8_t p_2_id[NUMBER_OF_PROTOCOL_2_SERVO] = *{3, 4, 5}; // {servo_ID_3, servo_ID_4, ...};
 ```
 
-**• Servo Ping (must be included):**
+__• Servo setup (must be included):__
 
 ```cpp title="editt.cpp"
   // setup device and baudrate
   setup_dxl_wb();
 ```
 
-**• Add Goal Position syncWrite Handler (if you want use synWrite):**
-
-```cpp title="editt.cpp"
-  // setup syncwrite
-  add_goalpos_syncWrite();
-```
-
-**• Enable/disable torque to all servo *(true/false):**
+__• Enable/disable torque to all servo *(true/false):__
 
 ```cpp title="editt.cpp"
   enable_torque("p_1", *true);
@@ -80,7 +73,7 @@ const uint8_t p_2_id[NUMBER_OF_PROTOCOL_2_SERVO] = *{3, 4, 5}; // {servo_ID_3, s
   enable_torque("p_2", *true);
 ```
 
-**• Enable/disable LED to all servo *(true/false):**
+__• Enable/disable LED to all servo *(true/false):__
 
 ```cpp title="editt.cpp"
   enable_led("p_1", true);
@@ -88,7 +81,14 @@ const uint8_t p_2_id[NUMBER_OF_PROTOCOL_2_SERVO] = *{3, 4, 5}; // {servo_ID_3, s
   enable_led("p_2", true);
 ```
 
-**• Write *position value to servo (snycWrite):**
+__• Add Goal Position syncWrite Handler (if you want use synWrite):__
+
+```cpp title="editt.cpp"
+  // setup syncwrite
+  add_goalpos_syncWrite();
+```
+
+__• Write *position value to servo (snycWrite):__
 
 >You must fill in the value for each servo in the index array that corresponds to the servo ID array index
 
@@ -103,7 +103,7 @@ const uint8_t p_2_id[NUMBER_OF_PROTOCOL_2_SERVO] = *{3, 4, 5}; // {servo_ID_3, s
   do_syncWrite(); // write the goal position for p1 and p2
 ```
 
-**• Write *position value to servo (not use snycWrite):**
+__• Write *position value to servo (not use snycWrite):__
 
 >You must fill in the value for each servo in the index array that corresponds to the servo ID array index
 
